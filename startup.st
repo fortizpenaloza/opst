@@ -53,6 +53,11 @@ StartupPreferencesLoader default executeAtomicItems:
       runOnce: true).
 
     (StartupAction
+      name: 'Autocompletion options'
+      code: [ NECPreferences caseSensitive: false ]
+      runOnce: true).
+
+    (StartupAction
       name: 'Show any startup action errors'
       code: [
         StartupPreferencesLoader default errors
