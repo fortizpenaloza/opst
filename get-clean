@@ -1,8 +1,10 @@
 #!/bin/bash
 
 if [ "$(uname -m)" == "x86_64" ]
-then PHARO_URL=get.pharo.org/64/
-else PHARO_URL=get.pharo.org
+then
+	PHARO_URL=get.pharo.org/64/
+else
+	PHARO_URL=get.pharo.org
 fi
 
 CACHE_FILE=clean-env.tgz
@@ -10,12 +12,23 @@ CACHE_FILE=clean-env.tgz
 while [[ $# -gt 0 ]]
 do
 	case "$1" in
+		--help)
+			echo '--help for this message'
+			echo "--fresh to ignore the cache file [$CACHE_FILE]"
+			echo '--clean just clean the environment'
+			echo '--run-save <path-to-script> run the provided script and save the image'
+			exit
+			;;
 		--fresh)
 			echo "Cleaning Cache"
 			rm -f "$CACHE_FILE"
 			;;
 		--clean)
 			DOWNLOAD=NO
+			;;
+		--run-save)
+			shift
+			FILE_TO_EXECUTE=$(readlink -e "$1")
 			;;
 		*)
 			# unknown option
@@ -44,4 +57,16 @@ then
 		echo "Saving downloaded files to Cache"
 		tar zcf "$CACHE_FILE" --exclude="$CACHE_FILE" --exclude="$(basename "$0")" --exclude="startup.st" --exclude="user-properties" ./*
 	fi
+fi
+
+if [ ! -z "$FILE_TO_EXECUTE" ] && [ -f pharo ]
+then
+	echo "Executing $FILE_TO_EXECUTE"
+	./pharo Pharo.image eval """
+	$(cat "$FILE_TO_EXECUTE").
+	SmalltalkImage current
+		closeSourceFiles;
+		openSourceFiles;
+		snapshot: true andQuit: true
+	"""
 fi
