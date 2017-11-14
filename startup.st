@@ -4,7 +4,7 @@ StartupPreferencesLoader default executeAtomicItems:
       name: 'Set author name'
       code: [ | properties|
         properties := FileStream
-          readOnlyFileNamed: 'user-properties'
+          readOnlyFileNamed: 'user-properties.json'
           do: [:file | STONJSON fromString: file contentsOfEntireFile ].
 
         Author fullName: (properties at: #author) ]
