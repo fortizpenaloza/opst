@@ -14,10 +14,24 @@ StartupPreferencesLoader default executeAtomicItems:
       name: 'Setup fonts'
       code: [
         StandardFonts
-          defaultFont: (LogicalFont familyName: 'Source Sans Pro' pointSize: 10) forceNotBold.
+          defaultFont: (LogicalFont 
+		familyName: 'Source Sans Pro' 
+		pointSize: 10 
+		stretchValue: 5
+		weightValue: 400
+		slantValue: 0).
           GraphicFontSettings resetAllFontToDefault.
-          StandardFonts windowTitleFont: (LogicalFont familyName: 'Source Sans Pro' pointSize: 11) forceBold.
-          StandardFonts codeFont: (LogicalFont familyName: 'Source Code Pro' pointSize: 10) ]
+        StandardFonts
+          codeFont: (LogicalFont 
+		familyName: 'Source Sans Pro' 
+		pointSize: 11 
+		stretchValue: 5
+		weightValue: 300
+		slantValue: 0).
+	StandardFonts 
+	  windowTitleFont: (LogicalFont 
+		familyName: 'Source Sans Pro' 
+		pointSize: 11) forceBold ]
       runOnce: true).
 
     (StartupAction
