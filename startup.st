@@ -14,25 +14,25 @@ StartupPreferencesLoader default executeAtomicItems:
       name: 'Setup fonts'
       code: [
         StandardFonts
-    defaultFont: (LogicalFont 
-  		familyName: 'Source Sans Pro' 
-  		pointSize: 11
-  		stretchValue: 5
-  		weightValue: 400
-  		slantValue: 0).
+          defaultFont: (LogicalFont
+        		familyName: 'Source Sans Pro'
+        		pointSize: 10
+        		stretchValue: 5
+        		weightValue: 400
+        		slantValue: 0).
         GraphicFontSettings resetAllFontToDefault.
         StandardFonts
-    codeFont: (LogicalFont 
-		  familyName: 'Source Sans Pro' 
-		  pointSize: 11 
-		  stretchValue: 5
-		  weightValue: 300
-		  slantValue: 0).
-	StandardFonts 
-	  windowTitleFont: (LogicalFont 
-	  	familyName: 'Source Sans Pro' 
-	  	pointSize: 13) forceBold ]
-       runOnce: true).
+          codeFont: (LogicalFont
+        		familyName: 'Source Sans Pro'
+        		pointSize: 11
+        		stretchValue: 5
+        		weightValue: 300
+          	slantValue: 0).
+  	    StandardFonts
+          windowTitleFont: (LogicalFont
+      		  familyName: 'Source Sans Pro'
+      		  pointSize: 11) forceBold ]
+      runOnce: true).
 
     (StartupAction
       name: 'Set up UI theme'
@@ -77,5 +77,4 @@ StartupPreferencesLoader default executeAtomicItems:
         StartupPreferencesLoader default errors
           ifNotEmpty: [ :errors | errors explore ] ]
       runOnce: true).
-
   }
