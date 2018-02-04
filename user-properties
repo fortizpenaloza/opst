@@ -1,3 +1,7 @@
 {
-  "author" : "fortizpenaloza"
+  "author" : "fortizpenaloza",
+  "iceberg" : {
+    "shared_directory" : "/Users/patchinko/Development/github",
+    "code_subdirectory" : "source"
+  }
 }
