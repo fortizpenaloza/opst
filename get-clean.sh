@@ -39,7 +39,7 @@ done
 
 # Clean Environment
 echo "Cleaning Environment"
-find . -maxdepth 1 -not \( -name "." -o -name "$CACHE_FILE" -o -name "$(basename "$0")" -o -name "startup.st" -o -name "user-properties" \) -exec rm -rf {} \;
+find . -maxdepth 1 -not \( -name "." -o -name "$CACHE_FILE" -o -name "$(basename "$0")" -o -name "startup.st" -o -name "user-properties.json" \) -exec rm -rf {} \;
 
 if [ "$DOWNLOAD" != "NO" ]
 then
