@@ -80,7 +80,7 @@ StartupPreferencesLoader default executeAtomicItems:
 
     (StartupAction
       name: 'Enable Iceberg Metacello integration'
-      code: [ Iceberg enableMetacelloIntegration ]
+      code: [ Iceberg enableMetacelloIntegration: true ]
       runOnce: true).
 
     (StartupAction
