@@ -55,7 +55,7 @@ then
 		fi
 
 		echo "Saving downloaded files to Cache"
-		tar zcf "$CACHE_FILE" --exclude="$CACHE_FILE" --exclude="$(basename "$0")" --exclude="startup.st" --exclude="user-properties" ./*
+		tar zcf "$CACHE_FILE" --exclude="$CACHE_FILE" --exclude="$(basename "$0")" --exclude="startup.st" --exclude="user-properties.json" ./*
 	fi
 fi
 
