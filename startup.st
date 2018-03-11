@@ -30,7 +30,7 @@ StartupPreferencesLoader default executeAtomicItems:
         GraphicFontSettings resetAllFontToDefault.
         StandardFonts
           codeFont: (LogicalFont
-        		familyName: 'Source Sans Pro'
+        		familyName: 'Source Code Pro'
         		pointSize: 11
         		stretchValue: 5
         		weightValue: 300
