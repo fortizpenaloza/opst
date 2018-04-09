@@ -1,7 +1,20 @@
 {
   "author" : "fortizpenaloza",
+  "fonts" : {
+    "default" : {
+      "name" : "Source Sans Pro",
+      "size" : 10
+    },
+    "code" : {
+      "name" : "Source Code Pro",
+      "size" : 11
+    }
+  }
   "iceberg" : {
     "shared_directory" : "/Users/patchinko/Development/github",
     "code_subdirectory" : "source"
+  }
+  "playground" : {
+    "stash_directory" : "/Users/patchinko/Development/github/playground_stash"
   }
 }
