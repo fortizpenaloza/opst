@@ -95,6 +95,11 @@ StartupPreferencesLoader default executeAtomicItems:
         runOnce: true).
 
     (StartupAction
+        name: 'Local Playground stash directory'
+        code: [ GTPlayBook stashDirectory: ((StartupContext at: #playground) at: #stash_directory) ]
+        runOnce: true).
+
+    (StartupAction
         name: 'Clean startup context'
         code: [ Smalltalk globals removeKey: #StartupContext ]
         runOnce: true).
